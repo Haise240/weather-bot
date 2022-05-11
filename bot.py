@@ -9,17 +9,19 @@ bot = Bot(token=bot_token)
 dp = Dispatcher(bot)
 
 
-#Begining command for bot
+# Beginning command for bot
 @dp.message_handler(commands=["start"])
 async def start_command(message: types.message):
     await message.reply("Введите название города")
 
-#Explain for user what can do this bot
+
+# Explain for user what can do this bot
 @dp.message_handler(commands=["help"])
 async def start_command(message: types.message):
     await message.reply("Показывает погоду в городе")
 
-#Request from open weather for any city from input
+
+# Request from open weather for any city from input
 @dp.message_handler()
 async def get_weather(message: types.message):
     try:
